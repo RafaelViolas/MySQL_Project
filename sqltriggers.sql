@@ -1,6 +1,6 @@
 -- triggers
 
-
+-- Impedir a Inserção de uma entrega se o veículo ou motorista não estiver disponível
 drop trigger  if exists entregas_before_insert;
 delimiter //
 create trigger entregas_before_insert
