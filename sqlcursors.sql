@@ -1,21 +1,22 @@
--- `Entregas`.`ID`, `Entregas`.`VeículoID`, `Entregas`.`MotoristaID`, `Entregas`.`DataEntrega`, `Entregas`.`Estado`
+-- cursors
 
--- not working.
+-- Gerar um relatório que lista todas as entregas realizadas e a quantidade de entregas por veículo e motorista num determinado período
 DROP PROCEDURE  IF EXISTS NESTED_CURSOR;
 
 DELIMITER $$
 CREATE PROCEDURE NESTED_CURSOR (in _data1 datetime, in _data2 datetime)
 BEGIN
 DECLARE done1 INT DEFAULT FALSE;
-    declare _ID INT;
-    declare _VeiculoID INT;
+	declare _VeiculoID INT;
     declare _MotoristaID INT;
+    
+    declare _ID INT;
     declare _DataEntrega datetime;
     declare _Estado tinyint(1);
 	declare numero int;
 
     declare cursor1 cursor for 
-select Entregas.VeículoID, MotoristaID
+select Entregas.`VeículoID`, MotoristaID
 from Entregas
 where DataEntrega
 BETWEEN _data1
@@ -32,10 +33,10 @@ END IF;
         BEGIN  
 DECLARE done2 INT DEFAULT FALSE;
 declare cursor2 cursor for
-select Entregas.ID, count(*) as numero
+select Entregas.ID, count(*) as numero, Entregas.DataEntrega
 from Entregas
 where _VeiculoID = Entregas.VeículoID and _MotoristaID = Entregas.MotoristaID
-group by Entregas.ID, Entregas.`VeículoID`, Entregas.MotoristaID;
+group by Entregas.ID, Entregas.`VeículoID`, Entregas.MotoristaID, Entregas.DataEntrega;
 DECLARE CONTINUE HANDLER FOR NOT FOUND SET done2 = TRUE;  
             open cursor2;
 read_loop2: LOOP
