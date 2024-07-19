@@ -1,0 +1,14 @@
+consultas(as queries (select * from table;)) em sql
+DDL(?) queries de estilo Create table
+implementação de primary key, not null, foreign key, auto increment e proibido? nao
+triggers(nao fiz nenhum antes mas se a de baixo for aceite posso inventar)
+pode-se basear nas queries feitas antes? sim, total consulta
+
+
+documentação é à parte ou nos scripts em si? como quiseres
+
+os campos nas tabelas podem nao ser o suficiente para cumprir as questoes
+documentação seria fora do mysql em si
+cursors dentro de stored procedures
+
+possivel de "go above and beyond" para receber mais pontos
