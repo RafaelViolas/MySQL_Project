@@ -12,3 +12,6 @@ documentação seria fora do mysql em si
 cursors dentro de stored procedures
 
 possivel de "go above and beyond" para receber mais pontos
+
+Objetivos da base de dados:
+Desenvolver um sistema de gestão de uma transportadora que permita o controlo de veículos, motoristas, rotas e entregas.
