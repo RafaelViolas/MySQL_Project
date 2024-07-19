@@ -1,5 +1,7 @@
+-- Criar o schema onde as tabelas suportem-se
 Create schema `Transportadora`;
 
+-- Criar a tabela para os veículos
 CREATE TABLE `Veículos` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Marca` varchar(30) NOT NULL,
@@ -10,7 +12,7 @@ CREATE TABLE `Veículos` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+-- Criar a tabela para os motoristas
 CREATE TABLE `Motoristas` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Nome` varchar(50) NOT NULL,
@@ -20,7 +22,7 @@ CREATE TABLE `Motoristas` (
   UNIQUE KEY `CartaCondução_UNIQUE` (`CartaCondução`)
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+-- Criar a tabela para as Rotas
 CREATE TABLE `Rotas` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `Origem` varchar(60) NOT NULL,
@@ -29,7 +31,7 @@ CREATE TABLE `Rotas` (
   PRIMARY KEY (`ID`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
-
+-- Criar a tabela para as Entregas
 CREATE TABLE `Entregas` (
   `ID` int NOT NULL AUTO_INCREMENT,
   `VeículoID` int NOT NULL,
