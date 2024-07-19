@@ -1,5 +1,6 @@
 -- `Entregas`.`ID`, `Entregas`.`VeículoID`, `Entregas`.`MotoristaID`, `Entregas`.`DataEntrega`, `Entregas`.`Estado`
 
+-- not working.
 DROP PROCEDURE  IF EXISTS NESTED_CURSOR;
 
 DELIMITER $$
